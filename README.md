@@ -1,5 +1,3 @@
-# README.md
-
 ## Project Description
 
 **Island2KML** is a Java application that interacts with the NDS.live API to retrieve road infrastructure data for an island and converts this data into KML format for visualization in applications like Google Earth.
