@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class App {
     private static final String BASE_PATH = "https://api.nds.live/island1";
-    private static final String API_KEY = "s1HcsudEbJ4kksn9w1kCia6OShrrKusD";
+    private static final String API_KEY = "YOUR_API_KEY_HERE";
     private static final String TILE_ID = "545379780";
     private static final String OUTPUT_KML_FILE = "island1.kml";
 
