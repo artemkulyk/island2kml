@@ -26,7 +26,7 @@ The application performs the following functions:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/ndsisland12kml.git
+   git clone https://github.com/yourusername/island2kml.git
    ```
 
 2. **Navigate to the Project Directory**
