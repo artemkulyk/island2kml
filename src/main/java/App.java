@@ -138,9 +138,9 @@ public class App {
                     .withTessellate(true); // Tesselation to follow the terrain
 
             for (Position3D pos : line.getPositions()) {
-                logger.fine("Adding position: " + pos);
                 NdsCoordinate ndsCoord = new NdsCoordinate(pos.getLongitude(), pos.getLatitude(), pos.getElevation());
                 WGS84Coordinate wgsCoord = ndsCoord.toWGS84Coordinate();
+                logger.info("Adding position: " + ndsCoord + " -> " + wgsCoord);
                 lineStr.addToCoordinates(wgsCoord.lon(), wgsCoord.lat(), wgsCoord.elevation() / 100.0);
             }
         }

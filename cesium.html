@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CesiumJS with HERE and KML</title>
+    <!-- Include CesiumJS library -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.93/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.93/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+        /* Set the size for the Cesium container */
+        #cesiumContainer {
+          width: 100%;
+          height: 100vh;
+          margin: 0;
+          padding: 0;
+          display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<script>
+    // Set the Cesium API token
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MzEyZTliYS1kMTliLTQ0OGQtYjk3YS00YTA1ZTdhYjhkZmIiLCJpZCI6MTE2OTg5LCJpYXQiOjE2NzAwMjE4ODh9.SlLRMGcGA3TTzl1MMNYfccNQL_wYuP1_UCXRASGY1FE';
+
+    // Initialize the Cesium Viewer with HERE maps as the base layer
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+      imageryProvider: new Cesium.UrlTemplateImageryProvider({
+        url: 'https://1.base.maps.ls.hereapi.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?apiKey=cShap6FZA0LUlDKEyvWpE7S0uJvDULLA7Lc8-Eu8CqM'
+      }),
+      baseLayerPicker: false, // Disable base layer picker since we are using HERE
+      sceneMode: Cesium.SceneMode.SCENE3D // Enable 3D scene
+    });
+
+    // Center the camera on the specified coordinates (latitude: 47.993867, longitude: 11.132083)
+    viewer.camera.setView({
+      destination: Cesium.Cartesian3.fromDegrees(11.132083, 47.993867, 1500) // 1500 meters altitude
+    });
+
+    // Load the KML file and add it to the map
+    var kmlDataSource = Cesium.KmlDataSource.load('./island1.kml');
+    viewer.dataSources.add(kmlDataSource);
+
+    // Enable globe lighting for a more realistic 3D effect
+    viewer.scene.globe.enableLighting = true;
+</script>
+</body>
+</html>
