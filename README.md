@@ -1,6 +1,6 @@
 # Island 2 KML
 
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/d63d358a-a2f3-4615-8b4b-9aa7b2f718b0">
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/d4336c73-1aa6-4d61-84de-7e6be12088d4">
 
 
 ## Project Description
